@@ -22,6 +22,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: nowrap; /* Ensure elements don't wrap */
 }
 .search input{
     border: 0;
@@ -34,6 +35,7 @@ body{
     flex: 1;
     margin-right: 16px;
     font-size: 18px;
+    min-width: 0; /* Ensures the input can shrink */
 }
 .search button{
     border: 0;
@@ -43,6 +45,7 @@ body{
     width: 60px;
     height: 60px;
     cursor: pointer;
+    flex-shrink: 0; /* Prevents button from shrinking */
 }
 .search button img{
     width: 16px;
@@ -91,4 +94,24 @@ body{
     margin-top: 10px;
     color: red;
     display: none;
+}
+
+
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .search input{
+        padding: 10px 15px; /* Adjust padding */
+        height: 50px; /* Adjust height */
+        font-size: 16px; /* Adjust font size */
+        margin-right: 8px; /* Reduce margin-right */
+    }
+    .search button{
+        width: 50px; /* Adjust width */
+        height: 50px; /* Adjust height */
+        border-radius: 25px; /* Adjust border-radius */
+    }
+    .search button img{
+        width: 12px; /* Adjust image size */
+    }
 }
